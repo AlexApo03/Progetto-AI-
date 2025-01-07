@@ -1,0 +1,44 @@
+{
+    "training": {
+        "vehicles": {
+            "data_dir": "images/train/vehicles",
+            "model_name": "vehicles_model.pth",
+            "num_classes": 3,
+            "epochs": 10,
+            "batch_size": 32,
+            "learning_rate": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 0.0001,
+            "step_size": 7,
+            "gamma": 0.1,
+            "early_stopping":{
+                "patience": 5
+            }
+        }
+    },
+    "inference": {
+        "vehicles": {
+            "input_dir": "images/test/vehicles",
+            "output_dir": "images/valid/vehicles",
+            "num_images": 100
+        }
+    },
+    "filters": {
+        "vehicles": {
+            "cars": "flip",
+            "bikes": "grayscale",
+            "motorcycles": "invert"
+        }
+    },
+    "paths": {
+        "model_paths": {
+            "vehicles_model": "models/vehicles_model.pth"
+        },
+        "image_dirs": {
+            "vehicles": {
+                "input_dir": "images/test/vehicles",
+                "output_dir": "images/valid/vehicles"
+            }
+        }
+    }
+}
